@@ -3,6 +3,22 @@
 
 ![Image of tamagochi](https://m.media-amazon.com/images/I/819ZUKGJraS._AC_SX425_.jpg)  
 
+## CONTENTS
+
+1. Outline
+2. Jobs done
+3. Features
+4. Consideration
+
+
+# Stuff I learned about Flask dev
+
+- Page wont even render if something is wrong but not a python issue (check return on routes)
+- Reading json from sqlite3 is still in text form. You need to jsonloads
+- you can clear session with `session.clear()` but use a flag so it happens only once on load
+- Debugging is hard, logs arent so clear
+
+
   
 ## Outline  
   

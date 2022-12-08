@@ -18,13 +18,26 @@ This is a web tribute to Tamagochi toys from the past where you can raise a litt
 | Stack Choice  | Incomplete |
   
 
+
 ## Bullets  
   
 
 - User creates an account
 - User Hatches an egg to get a pet
 - User raises the pet over digital time 
-   
+
+
+## FEATURES
+
+- Go for a walk
+- feed me
+- pet me 
+- play with me
+	- fetch ball
+	- dancing
+- Play with other pets
+- Enter race competition
+- Enter fighting competition
 
 ## Inspiration   
   
@@ -41,5 +54,15 @@ This is a web tribute to Tamagochi toys from the past where you can raise a litt
   
 React probably isn't required, just a DB that can be deployed, backend logic to manage lifecycle, javascript to manage button actions and slide images, css bootstrapping to make the app mobile compatible. 
 
-Decision: I should probably do it all in javascript, but mocking out in FARM might be easier.   
+Decision: I should probably do it all in javascript, but mocking out in FARM might be easier.  
+
+
+
+## Drawings
+
+Happy
+Sad
+Speaking
+Ill
+Sleeping 
 

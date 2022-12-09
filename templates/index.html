@@ -3,29 +3,32 @@
 <head>
   <meta charset="utf-8">
   <title>Pet Information</title>
-  <style>
-    body {
-      font-family: sans-serif;
-      text-align: center;
-    }
 
-    h1 {
-      margin-top: 40px;
-    }
-
-    p {
-      margin-top: 20px;
-    }
-
-    a {
-      color: #42b983;
-      text-decoration: none;
-    }
-  </style>
 </head>
 <body>
   <h1>Hi {{ username }}, here's some information about your pet {{ pet_name }}:</h1>
   <p>Age: {{ pet_age }}</p>
+  <p>Time Elapsed: {{ time_elapsed }}</p>
   <p><a href="/logout">Logout</a></p>
 </body>
+
+<!-- Include the Socket.IO client library -->
+<script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
+
+<script>
+  // Connect to the WebSocket server
+  var socket = io.connect('http://127.0.0.1:5000');
+  
+
+  // Listen for updates from the server
+  socket.on('update', function(data) {
+    print("***Data " + str(data))
+    // Update the page with the latest game state
+    document.getElementById('username').innerHTML = data.username;
+    document.getElementById('pet_name').innerHTML = data.pet_name;
+    document.getElementById('pet_age').innerHTML = data.pet_age;
+    document.getElementById('time_elapsed').innerHTML = data.time_elapsed;
+  });
+</script>
+
 </html>

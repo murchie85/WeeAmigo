@@ -89,8 +89,10 @@ def returnUser(username, password):
 # Create a function to store the game instance in the database
 def store_game(game, user_id):
 	try:
+		
 		# Convert the game object to a JSON string
-		game_json = json.dumps(game)
+		game_data = json.dumps(game.to_json())
+
 
 		# Connect to the database
 		conn = sqlite3.connect('users.db')
@@ -99,7 +101,7 @@ def store_game(game, user_id):
 		cursor = conn.cursor()
 
 		# Update the game_data column in the users table with the game JSON string
-		cursor.execute("UPDATE users SET game_data=? WHERE id=?", (game_json, user_id))
+		cursor.execute("UPDATE users SET game_data=? WHERE id=?", (game_data, user_id))
 
 		# Commit the changes to the database
 		conn.commit()

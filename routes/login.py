@@ -4,7 +4,9 @@ from tableFunctions import *
 
 #------ LOGIN
 def login():
-  print("POSTING LOG IN ")
+  if request.method == 'GET':
+    return render_template('login.html')
+  print("****RENDERING LOGIN PAGE ")
 
   # ATTEMPT TO CONNECT - CREATE TABLE IF NOT EXIST
   checkUserTableExists()
@@ -17,8 +19,10 @@ def login():
   # If the username and password are correct, store the user's information in the session
   if user:
     print('****LOGGING IN USER *****')
-    session['id']       = user[0]
-    session['username'] = user[1]
+    session['id']            = user[0]
+    session['username']      = user[1]
+    session['threadStarted'] = False  
+
 
     return redirect('/game')
   else:

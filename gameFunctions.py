@@ -2,7 +2,8 @@ import json
 
 # game class with run_game function
 class Game:
-  def __init__(self, pet,name,timer=0,age=0):
+  def __init__(self, _id,pet,name,timer=0,age=0):
+    self._id   = _id
     self.pet   = pet
     self.name  = name
     self.timer = timer
@@ -10,11 +11,12 @@ class Game:
 
   def increment_timer(self):
     self.timer += 1
-    self.age = self.timer / 3600
+    self.age = int(self.timer / 3600)
 
   def to_json(self):
     # Create a dictionary representing the Pet object
     self_dict = {
+      "id":    self._id,
       "pet":   self.pet,
       "name":  self.name,
       "timer": self.timer,
@@ -24,5 +26,5 @@ class Game:
 
   def run_game(self):
     self.increment_timer()
-    print('running')
+
 

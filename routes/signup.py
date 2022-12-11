@@ -40,7 +40,7 @@ def signup():
     # INITIALISING GAME OBJECT
     # Create a Game instance with the Pet instance
     print("Creating game instance for " + str(username) + 'pet name is ' + str(pet_name))
-    gameInstance      = Game(pet_name,username)
+    gameInstance      = Game(_id,pet_name,username)
 
     print("*****Creating user")
     createUser(_id, username,pet_name,password,gameInstance)
